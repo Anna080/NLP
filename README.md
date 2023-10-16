@@ -17,15 +17,19 @@ On se contentera de méthodes pré-réseaux de neurones. Nos features sont expli
 La codebase doit fournir les entry points suivant:
 - Un entry point pour train sur une "task", prenant en entrée le path aux données de train et dumpant le modèle dans "model_dump" 
 ```
-python src/main.py train --task=is_comic_video --input_file=data/raw/train.csv --model_dump=models/model.json
+python3 src/main.py train --task=is_comic_video --input_file=src/data/raw/train.csv --model_dump=src/model/dump.json
+
+python3 src/main.py train --task=is_comic_video --input_file=src/data/raw/train.csv --model_dump=src/model
 ```
 - Un entry point pour predict sur une "task", prenant en entrée le path au modèle dumpé, le path aux données à prédire et outputtant dans un csv les prédictions
 ```
-python src/main.py predict --task=is_comic_video --input_file=data/raw/test.csv --model_dump=models/model.json --output_file=data/processed/prediction.csv
+python3 src/main.py predict --task=is_comic_video --input_file=src/data/raw/train.csv --model_dump=src/model/dump.json --output_dir=src/data/processed/prediction.csv
+
+python3 src/main.py predict --task=is_comic_video --input_file=src/data/raw/train.csv --model_dump=src/model --output_dir=src/data/processed
 ```
 - Un entry point pour evaluer un modèle sur une "task", prenant en entrée le path aux données de train.
 ```
-python src/main.py evaluate --task=is_comic_video --input_file=data/raw/train.csv
+python3 src/main.py evaluate --task=is_comic_video --input_file=src/data/raw/train.csv
 ```
 
 Les "tasks":
