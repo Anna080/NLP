@@ -105,7 +105,7 @@ def evaluate(task, input_file, model_dump):
     else:
         print("Evaluation for the specified task is not implemented yet")
 
-# Ajouter les commandes à la ligne de commande
+# Ajoute les commandes à la ligne de commande
 cli.add_command(train)
 cli.add_command(predict)
 cli.add_command(evaluate)
