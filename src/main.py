@@ -72,28 +72,28 @@ def evaluate(task, input_file, model_dump):
                 model.vectorizer_type = vectorizer_type
                 model.df = df
 
-                # Préparez les caractéristiques
+                # Prépare les caractéristiques
                 X, y = model.train(df)
 
-                # Divisez les données en ensembles d'entraînement et de test
+                # Divise les données en ensembles d'entraînement et de test
                 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
                 model.X_train = X_train
                 model.y_train = y_train
 
-                # Entraînez votre modèle sur l'ensemble d'entraînement
+                # Entraîne votre modèle sur l'ensemble d'entraînement
                 model.fit()
 
-                # Prédisez les étiquettes sur l'ensemble de test
+                # Prédise les étiquettes sur l'ensemble de test
                 predictions = model.predict(X_test)
 
-                # Calculez les métriques d'évaluation
+                # Calcule les métriques d'évaluation
                 accuracy = accuracy_score(y_test, predictions)
                 precision = precision_score(y_test, predictions)
                 recall = recall_score(y_test, predictions)
                 f1 = f1_score(y_test, predictions)
 
-                # Affichez les métriques
+                # Affiche les métriques
                 print("Model: {}".format(model_name))
                 print("Vectorizer Type: {}".format(vectorizer_type))
                 print("Accuracy: {:.2f}".format(accuracy))
