@@ -16,7 +16,7 @@ def make_features(df, vectorizer_type):
         # Si la variable df est une matrice creuse, elle ne possède pas de colonnes.
         # Vous devez gérer le cas spécifique où df est déjà une matrice creuse.
         X = df
-        y = None  # Initialisez y à None car il n'y a pas de cible
+        y = None  # Initialise y à None car il n'y a pas de cible
     else:
         # Sinon, c'est supposé être un DataFrame avec des colonnes.
         if "is_comic" in df.columns:
